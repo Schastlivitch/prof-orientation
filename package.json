@@ -1,0 +1,27 @@
+{
+  "name": "prof-orientation",
+  "version": "1.0.0",
+  "description": "Need inspiration? How about fluffy-potato?",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Schastlivitch/prof-orientation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Schastlivitch/prof-orientation/issues"
+  },
+  "homepage": "https://github.com/Schastlivitch/prof-orientation#readme",
+  "dependencies": {
+    "connect-mongo": "^4.4.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.12.3"
+  }
+}
