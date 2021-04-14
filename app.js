@@ -2,11 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const sessions = require("express-session");
 const MongoStore = require("connect-mongo");
-const path = reuqire("path");
+const path = require("path");
 
 const app = express();
 
 const indexRouter = require("./routes/index");
+const authRouter = require('./routes/authentification')
 
 app.set("view engine", "hbs");
 app.set("cookieName", "sid");
@@ -21,7 +22,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: "mongodb://localhost:27017/", // адрессссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссс
+      mongoUrl: "mongodb://localhost:27017/profOrientation", // адрессссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссссс
     }),
     cookie: {
       httpOnly: true,
@@ -38,6 +39,8 @@ app.use(express.json());
 //
 //
 //
+app.use('/', indexRouter)
+app.use('/', authRouter)
 
 // Запуск сервака с монго
 app.listen(3000, () => {
@@ -45,7 +48,7 @@ app.listen(3000, () => {
 });
 // НАПИШИ АДРЕС-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С
 mongoose.connect(
-  "mongodb://localhost:27017/",
+  "mongodb://localhost:27017/profOrientation",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
