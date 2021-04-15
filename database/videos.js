@@ -12,7 +12,11 @@ const videoSchema = new Schema({
   favourites: {
     type: Number,
     default: 0},
-  case: String
-})
+    case: {
+      caseVideo: String,
+      caseScript: String,
+      solutionOfTheUser: String,
+      realSolution: String
+    }})
 const Video = model('Video', videoSchema)
 module.exports = Video
