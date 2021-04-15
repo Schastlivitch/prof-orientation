@@ -16,6 +16,11 @@ const videoSchema = new Schema({
       caseScript: String,
       solutionOfTheUser: String,
       realSolution: String
-    }})
+    },
+    likers: [{
+      type: String,
+    }]
+  })
+
 const Video = model('Video', videoSchema)
 module.exports = Video
