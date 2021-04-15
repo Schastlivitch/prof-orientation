@@ -9,20 +9,30 @@ router.get('/', (req, res) => {
   res.render('signup');
 })
 
-// router.post("/login", async (req, res) => {
-//   const { email, password } = req.body;
-//   if (email && password) {
-//     const currentUser = await User.findOne({email});
-//     if (
-//       !currentUser || 
-//       !(await bcrypt.compare(password, currentUser.password))
-//     ) {return res.render('login', {error: "Неправильный email или пароль"});
-//   }
-//   req.session.user = {id: currentUser._id};
-//   return res.redirect('/')
-//   }
-//   return res.status(418).redirect('/login')
-// });
+router.post('/', async (req, res) => {
+  const { login, email, password } = req.body;
+  console.log(req.body);
+  if (login && email && password) {
+    const secretPass = await bcrypt.hash(password, 10);
+    try {
+      const currentUser = await User.create({
+        name: login,
+        email,
+        password: secretPass,
+      });
+      if (currentUser) {
+        req.session.user = {
+          id: currentUser._id,
+          nick: currentUser.name
+        };
+        return res.redirect('/main');
+      }
+    } catch (e) {
+      return res.send('Ошибка регистрации')
+    }
+  }
+  return res.status(418).redirect('/signup');
+});
 
 module.exports = router;
 

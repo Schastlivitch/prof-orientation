@@ -52,12 +52,21 @@
               </li>
             </ul>
             <ul class="navbar-nav pull-right">
+              {{#if nick}}
+              <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">{{nick}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:3000/logout" tabindex="-1" aria-disabled="true">Выйти</a>
+              </li>
+              {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="http://localhost:3000/auth" tabindex="-1" aria-disabled="true">Войти</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="http://localhost:3000/signup" tabindex="-1" aria-disabled="true">Зарегестрироваться</a>
               </li>
+              {{/if}}
             </ul>
           </div>
         </div>
