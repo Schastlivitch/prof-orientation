@@ -8,6 +8,7 @@ const app = express();
 
 const indexRouter = require("./routes/index");
 const authRouter = require('./routes/authentification')
+const signUpRouter = require('./routes/signup')
 
 app.set("view engine", "hbs");
 app.set("cookieName", "sid");
@@ -40,7 +41,9 @@ app.use(express.json());
 //
 //
 app.use('/', indexRouter)
-app.use('/', authRouter)
+app.use('/auth', authRouter)
+app.use('/signup', signUpRouter)
+
 
 // Запуск сервака с монго
 app.listen(3000, () => {

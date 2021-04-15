@@ -30,26 +30,6 @@ router.get("/auth", (req, res) => {
 
 //Регистрация - получение формы
 
-router.get('/signup', (req, res) => {
-  res.render('signup');
-})
-
-// router.post("/login", async (req, res) => {
-//   const { email, password } = req.body;
-//   if (email && password) {
-//     const currentUser = await User.findOne({email});
-//     if (
-//       !currentUser || 
-//       !(await bcrypt.compare(password, currentUser.password))
-//     ) {return res.render('login', {error: "Неправильный email или пароль"});
-//   }
-//   req.session.user = {id: currentUser._id};
-//   return res.redirect('/')
-//   }
-//   return res.status(418).redirect('/login')
-// });
-
-
 //АДРЕС GET
 // router.get("/signOut", (req, res) => {
 //   req.session.destroy((err) => {
