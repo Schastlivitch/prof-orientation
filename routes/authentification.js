@@ -27,21 +27,21 @@ router.post("/", async (req, res) => {
 });
 
 //АДРЕС
-router.get("/login", (req, res) => {
+router.get("/login", async (req, res) => {
   const { email, password } = req.body;
   if (email && password) {
-    const currentUser = await User.findOne({email});
+    const currentUser = await User.findOne({ email });
     if (
-      !currentUser || 
+      !currentUser ||
       !(await bcrypt.compare(password, currentUser.password))
-    ) {return res.render('login', {error: "Неправильный email или пароль"});
+    ) {
+      return res.render("login", { error: "Неправильный email или пароль" });
+    }
+    req.session.user = { id: currentUser._id };
+    return res.redirect("/");
   }
-  req.session.user = {id: currentUser._id};
-  return res.redirect('/')
-  }
-  return res.status(418).redirect('/login')
+  return res.status(418).redirect("/login");
 });
-
 
 //АДРЕС GET
 router.get("/signOut", (req, res) => {
