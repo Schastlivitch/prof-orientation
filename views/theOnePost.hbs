@@ -9,7 +9,7 @@
                 {{!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> --}}
                
                 
-                <iframe src={{thePost.videoLink}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class='iframePost' src={{thePost.videoLink}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="card-bodyPost">
                   <p class="card-textPost">{{thePost.title}}</p>
                   <p class="card-textPost">{{thePost.profession}}</p>
@@ -17,10 +17,11 @@
                   <div class="d-flexPost justify-content-betweenPost align-items-centerPost">
                     </div>
                     {{!-- <small class="text-muted">9 mins</small> --}}
-                    <a class="nav-linkPost" href="http://localhost:3000/video/case:id" tabindex="-1" aria-disabled="true">Решить реальный кейс</a>
+                    <a class="nav-linkPost" href="http://localhost:3000/video/{{thePost.case.caseTitle}}" tabindex="-1" aria-disabled="true">Решить реальный кейс</a>
                      {{!--  ссылка на конкретный кейс--}}
                   </div> 
                     <div class="btn-groupPost">
+
                       <form action="http://localhost:3000/vote/{{thePost._id}}" method="GET" class="mb-2">
                         <button class="btnPost btn-smPost btn-outline-secondaryPost">Рейтинг: {{thePost.rating}} (проголосовать)</button>
                       </form>
