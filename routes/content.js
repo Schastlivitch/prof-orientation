@@ -3,6 +3,7 @@ const router = Router();
 
 const Profession = require("../database/professions");
 const Video = require("../database/videos");
+const donaterCheck = require('../mid/donaterCheck')
 
 
 
@@ -30,7 +31,8 @@ router.get('/video/cases', async (req, res) => {
   res.render('allTheCases', {caseCards})
 })
 
-router.get('/video/:caseTitle', async (req, res) => {
+router.get('/video/:caseTitle', donaterCheck, async (req, res) => {
+  console.log(req.params);
   let postCards = await Video.find()
   let caseCards = []
   for (let i = 0; i < postCards.length; i ++) {
@@ -47,25 +49,31 @@ router.get('/video/:caseTitle', async (req, res) => {
 
 router.get('/random', async(req, res) => {
   let postCards = await Video.find()
+  const random = Math.floor(Math.random() * (postCards.length))
   let caseCards = []
   for (let i = 0; i < postCards.length; i ++) {
     caseCards.push(postCards[i].case)
   }
+  let theCase = caseCards[random]
+  res.render('theOneCase', { theCase })
+
+})
     //рандомный кейс
 
-// router.get(`/:id`, async (req, res) => {
-//   // console.log('ya tut', req.params.id.length);
-//   // if (req.params.id < 10) {
+router.get(`/:id`, async (req, res) => {
+  // console.log('ya tut', req.params.id.length);
+  // if (req.params.id < 10) {
 
-//     const theProf = await Profession.findById(req.params.id)
-//     const thePost = await Video.findOne({profession: theProf.name})
-//     // const thePosts = await Video.findAll({{name: theProf.name}}) //когда будет больше, чем по одному видосу на профессию
-//     res.render('theOnePost', {thePost})
-//     // res.sendStatus(200)
-//   // }
-// })
-// router.get('/video/case:id', (req, res) => {
-//   res.render('theOneCase')
-// })
+    const theProf = await Profession.findById(req.params.id)
+    const thePost = await Video.findOne({profession: theProf.name})
+    // const thePosts = await Video.findAll({{name: theProf.name}}) //когда будет больше, чем по одному видосу на профессию
+    console.log(thePost);
+    res.render('theOnePost', {thePost})
+    // res.sendStatus(200)
+  // }
+})
+router.get('/video/case:id', (req, res) => {
+  res.render('theOneCase')
+})
 
 module.exports = router;

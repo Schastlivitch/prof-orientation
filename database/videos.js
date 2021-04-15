@@ -12,6 +12,7 @@ const videoSchema = new Schema({
     type: Number,
     default: 0},
     case: {
+      caseTitle: String,
       caseVideo: String,
       caseScript: String,
       solutionOfTheUser: String,

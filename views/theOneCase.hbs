@@ -1,36 +1,10 @@
-    {{!-- <main class='Case'>
-
-      <div class="albumCase py-5Case bg-lightCase">
-        <div class="containerCase">
-          <div class="rowCase row-cols-1Case row-cols-sm-2Case row-cols-md-3Case g-3Case">
-
-            <div class="colCase">
-              <div class="cardCase shadow-smCase">
-                
-                <iframe class='iframeCase' src={{theCase.caseVideo}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="card-bodyCase">
-                  <p class="card-textCase">{{theCase.caseTitle}}</p>
-                  <p class='card-textCase'>{{theCase.aseScript}}</p>              
-                </div> 
-                    <div class="btn-groupCase">
-                      <button class="btn btn-sm btn-outline-secondaryCase">решить кейс и спросить эксперта</button>
-                      <button class="btn btn-sm btn-outline-secondaryCase">посмотреть решение</button>
-                </div>
-              </div>
-            </div>
-
-    </main>--}}
-    
-
-<main id="Case">
-  <div class="container">
-    <h2 class="mt-5">{{theCase.caseTitle}}</h2>
-    <iframe width="100%" height="500px" src={{theCase.caseVideo}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <p class='card-textCase'>{{theCase.caseScript}}</p>              
-      <input type='textarea' width="100%" placeholder="Попробуйте себя в роли эксперта данной сферы и решите поставленную задачу, а потом узнайте, наскольо рационально вы справились!">
-    <div class="btn-groupCase">
-       <button class="btnCase btn-sm btn-outline-secondaryCase">решить кейс и спросить эксперта</button>
-       <button class="btnCase btn-sm btn-outline-secondaryCase">посмотреть решение</button>
-    </div>
+<main class="flex-shrink-0">
+  <div class="container pt-5">
+    <h2 class="mb-5">{{theCase.caseTitle}}</h2>
+    <iframe style="width: 100%; height: 500px" class="mb-3" src="{{theCase.caseVideo}}"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p class="lead">{{theCase.caseScript}}</p>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Примерьте на себя роль эксперта и решите поставленную задачу"></textarea>
+    <button class="btnCase btn-sm btn-outline-secondaryCase mt-4">решить кейс и спросить эксперта</button>
+    <button class="btnCase btn-sm btn-outline-secondaryCase ms-2">посмотреть решение</button>
   </div>
 </main>

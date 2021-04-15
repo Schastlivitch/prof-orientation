@@ -120,7 +120,7 @@ function vidFabric() {
         rating: 0,
         favourites: 0,
         case: {
-          caseTitle: "Разбилась пробирка с вирусом. Что делать?",
+          caseTitle: "Разбилась пробирка с вирусом. Что делать",
           caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
@@ -150,7 +150,7 @@ function vidFabric() {
         rating: 0,
         favourites: 0,
         case: {
-          caseTitle: "Писать честно или терпеть обыски?",
+          caseTitle: "Писать честно или терпеть обыски",
           caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
@@ -180,7 +180,7 @@ function vidFabric() {
         rating: 0,
         favourites: 0,
         case: {
-          caseTitle: "Встретился забавный баг в черновой версии программы, сообщить или посмеяться?",
+          caseTitle: "Встретился забавный баг в черновой версии программы, сообщить или посмеяться",
           caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
@@ -195,7 +195,7 @@ function vidFabric() {
         rating: 0,
         favourites: 0,
         case: {
-          caseTitle: "Рисовать макеты или договариваться с заказчиком на словах?",
+          caseTitle: "Рисовать макеты или договариваться с заказчиком на словах",
           caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
