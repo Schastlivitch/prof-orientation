@@ -13,15 +13,15 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
   const { login, password } = req.body;
   if (login && password) {
-    const currentUser = await User.findOne({name: login});
+    const currentUser = await User.findOne({ name: login });
     if (currentUser) {
       const validation = await bcrypt.compare(password, currentUser.password);
       if (validation) {
         req.session.user = {
           id: currentUser._id,
-          nick: currentUser.name
+          nick: currentUser.name,
         };
-       return res.redirect("/main");
+        return res.redirect("/main");
       }
       return res.redirect("/auth");
     }
