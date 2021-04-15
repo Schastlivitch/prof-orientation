@@ -1,0 +1,22 @@
+    <main class="flex-shrink-0">
+      <div class="container">
+        <h1>Привет {{nick}}!</h1>
+        <h2 class="mt-5">Общая информация о профиле</h2>
+        <p class="lead">
+          <p><a>Логин</a>: <a>{{nick}}</a></p>
+          <p><a>Почта</a>: <a>{{currentUser.email}}</a></p>
+        </p>
+        <h2 class="mt-3">Предпочтения</h2>
+        <p class="lead">
+          {{#each currentUser.intrests}}
+          <p>{{this}}</p>
+          {{/each}}
+        </p>
+        <form>
+          <button class="w-100 btn btn-lg btn-success">Изменить предпочтения</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="js/editprofile.js"></script>
+

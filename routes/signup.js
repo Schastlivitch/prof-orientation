@@ -23,9 +23,9 @@ router.post('/', async (req, res) => {
       if (currentUser) {
         req.session.user = {
           id: currentUser._id,
-          nick: currentUser.name
+          nick: currentUser.name,
         };
-        return res.redirect('/main');
+        return res.redirect('/lk');
       }
     } catch (e) {
       return res.send('Ошибка регистрации')
