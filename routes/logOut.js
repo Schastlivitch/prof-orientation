@@ -1,3 +1,6 @@
+const { Router } = require("express");
+const router = Router();
+
 router.get("/logOut", (req, res) => {
   req.session.destroy((err) => {
     if (err) return res.redirect("/");
@@ -5,3 +8,5 @@ router.get("/logOut", (req, res) => {
     return res.redirect("/");
   });
 });
+
+module.exports = router;
