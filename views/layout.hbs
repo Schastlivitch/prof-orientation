@@ -41,23 +41,36 @@
           <a class="navbar-brand" href="http://localhost:3000/">Prof</a>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              {{#if nick}}
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="http://localhost:3000/main">Главная</a>
               </li>
+              {{/if}}
               <li class="nav-item">
                 <a class="nav-link" href="http://localhost:3000/prof">Профессии</a>
               </li>
+              {{#if nick}}
               <li class="nav-item">
                 <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Кейсы</a>
               </li>
+              {{/if}}
             </ul>
             <ul class="navbar-nav pull-right">
+              {{#if nick}}
+              <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">{{nick}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:3000/logout" tabindex="-1" aria-disabled="true">Выйти</a>
+              </li>
+              {{else}}
               <li class="nav-item">
                 <a class="nav-link" href="http://localhost:3000/auth" tabindex="-1" aria-disabled="true">Войти</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="http://localhost:3000/signup" tabindex="-1" aria-disabled="true">Зарегестрироваться</a>
               </li>
+              {{/if}}
             </ul>
           </div>
         </div>
