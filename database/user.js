@@ -10,7 +10,11 @@ const userSchema = new Schema({
   password: { type: String,
               required: true},
   intrests: Array,
-  favoriteVideos: Array
+  favoriteVideos: Array,
+  status: {
+    type: String,
+    default: 'user'
+  }
 })
 const User = model('User', userSchema)
 module.exports = User

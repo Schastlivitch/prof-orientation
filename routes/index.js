@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-router.get("/main", checkAuth, guestCheck, (req, res) => {
+router.get("/main", checkAuth, (req, res) => {
   res.render("main");
 });
 
@@ -23,10 +23,9 @@ router.get("/prof", async (req, res) => {
 
 router.get(
   "/video",
-  adminCheck,
+  // adminCheck,
   donaterCheck,
   checkAuth,
-  guestCheck,
   async (req, res) => {
     const videoCards = await Video.find();
     res.render("video", { videoCards });
