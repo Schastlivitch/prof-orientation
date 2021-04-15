@@ -18,6 +18,7 @@ router.get(`/:id`, async (req, res) => {
   // res.sendStatus(200)
 })
 
+
 router.get('/video', async (req, res) => {
   const postCards = await Video.find()
   res.render('video', {postCards})
