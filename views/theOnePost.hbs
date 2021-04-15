@@ -1,0 +1,40 @@
+   <main>
+
+      <div class="albumPost py-5Post bg-lightPost">
+        <div class="containerPost">
+          <div class="rowPost row-cols-1Post row-cols-sm-2Post row-cols-md-3Post g-3Post">
+
+            <div class="colPost">
+              <div class="cardPost shadow-smPost">
+                {{!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> --}}
+               
+                
+                <iframe src={{thePost.videoLink}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="card-bodyPost">
+                  <p class="card-textPost">{{thePost.title}}</p>
+                  <p class="card-textPost">{{thePost.profession}}</p>
+                  <p class='card-textPost'>{{thePost.script}}</p>
+                  <div class="d-flexPost justify-content-betweenPost align-items-centerPost">
+                    </div>
+                    {{!-- <small class="text-muted">9 mins</small> --}}
+                    <a class="nav-linkPost" href="http://localhost:3000/video/case:id" tabindex="-1" aria-disabled="true">Решить реальный кейс</a>
+                     {{!--  ссылка на конкретный кейс--}}
+                  </div> 
+                    <div class="btn-groupPost">
+                      <button class="btnPost btn-smPost btn-outline-secondaryPost">Рейтинг: {{thePost.rating}} (проголосовать)</button>
+                      <button class="btnPost btn-smPost btn-outline-secondaryPost">В любимом у {{thePost.favourites}} (добавить)</button>
+                </div>
+              </div>
+            </div>
+
+    </main>
+    
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+      </div>
+    </footer>

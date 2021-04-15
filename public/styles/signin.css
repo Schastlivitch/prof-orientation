@@ -37,3 +37,34 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+
+/* для одиночных постиков */
+main {
+  width: 90%;
+  height: 80%;
+}
+
+.btn-groupPost{
+  border-radius: 2px;
+  color: #6c757d;
+  border-color: #6c757d;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align:right;
+}
+
+.btnPost{
+  border-radius: 2px;
+  color: #6c757d;
+  border-color: #6c757d;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+iframe{
+  width: 100%;
+  height: 500px;
+}

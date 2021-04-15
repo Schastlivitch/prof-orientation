@@ -1,8 +1,7 @@
 const {Schema, model} = require('mongoose')
 
 const videoSchema = new Schema({
-  profession: { type: Schema.Types.ObjectId,
-              ref: 'Profession' },
+  profession: String,
   title: String,
   videoLink: String,
   script: String, //или файл через fs reader???

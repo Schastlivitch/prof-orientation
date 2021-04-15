@@ -83,126 +83,136 @@ function profFabric() {
 function vidFabric() {
   const videos = [
     {
-      profession: "6077074863064cca4d43a8b1",
-        title: 'Больной с болями в груди',
+      profession: "Терапевт",
+        title: 'Что делает врач',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Больной с болями в груди",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'
         }
     },
     {
-      profession: "6077074863064cca4d43a8b2",
-        title: 'Влог из морга',
+      profession: "Патологоанатом",
+        title: 'Что делает паталогоанатом',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Привезли тело, подозрение на насильственную смерть.",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'
         } 
       },
     {
-      profession: "6077074863064cca4d43a8b3",
-        title: 'Как проходит исследование короновируса',
+      profession: "Вирусолог",
+        title: 'Как проходит день вирусолога',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Разбилась пробирка с вирусом. Что делать?",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'
         }
     },
     {
-      profession: "6077074863064cca4d43a8b4",
+      profession: "Гост райтер",
         title: 'Кто такой гост райтер',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Пишем кальянный рэпчик о любви за полчаса.",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'
         }
     },
     {
-      profession: "6077074863064cca4d43a8b5",
-        title: 'Стоит ли стремиться быть журналистом в России',
+      profession: "Журналист",
+        title: 'Журналистика в России',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Писать честно или терпеть обыски?",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'
         }
     },
     {
-      profession: "6077074863064cca4d43a8b6",
+      profession: "Человек, который пишет тебе курсач",
         title: 'Как пишутся курсовые.',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Предложили написать курсовую по роботехнике, а ты сам учил филологию, или Как стать экспертом в роботехнике за трое суток и семь литров кофе",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'
         }
     },
     {
-      profession: "6077074863064cca4d43a8b7",
+      profession: "Тестировщик",
         title: 'Что за профессия тестировщик',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Встретился забавный баг в черновой версии программы, сообщить или посмеяться?",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'
         }
     },
     {
-      profession: "6077074863064cca4d43a8b8",
+      profession: "Девелопер",
         title: 'Что за профессия девелопер',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Рисовать макеты или договариваться с заказчиком на словах?",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'
         }
     },
     {
-      profession: "6077074863064cca4d43a8b9",
+      profession: "Сисадмин",
         title: 'Что за профессия сисадмин',
         videoLink: "https://www.youtube.com/embed/BzV4BkxtyYs",
         script: "Тут будет высвечиваться скрипт видео, возможно, мы подключим его к таймеру и запустим субтитрами во время видео, нужно будет человеку проверить скрипт, а не полагаться на автосоздание субтитров как, например, в ютубе, потому что там часто выпадают крайне транные слова, срамота, а не результат.", //или файл через fs reader???
         rating: 0,
         favourites: 0,
         case: {
-          caseVideo: "https://www.youtube.com/watch?v=4fVaAqq5SYA&ab_channel=JustPucciThings",
+          caseTitle: "Всё упало, всё сломалось, а я крайний.",
+          caseVideo: "https://www.youtube.com/embed/VfW86fnQL5w",
+          // <iframe width="560" height="315" src="https://www.youtube.com/embed/VfW86fnQL5w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           caseScript: "скрипт видео кейса",
           solutionOfTheUser: 'сюда будет сохраняться решение пользователя',
           realSolution: 'тут будет выводиться решение профессионала'

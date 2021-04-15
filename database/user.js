@@ -9,6 +9,7 @@ const userSchema = new Schema({
            uique: true},
   password: { type: String,
               required: true},
+  type: String,
   intrests: Array,
   favoriteVideos: Array,
   status: {
