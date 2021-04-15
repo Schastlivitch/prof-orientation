@@ -7,7 +7,7 @@ const path = require("path");
 const app = express();
 
 const indexRouter = require("./routes/index");
-const authRouter = require('./routes/authentification')
+const authRouter = require('./routes/auth')
 const signUpRouter = require('./routes/signup')
 
 app.set("view engine", "hbs");
@@ -31,6 +31,11 @@ app.use(
     },
   })
 );
+
+app.use(async (req, res, next) => {
+  res.locals.nick = req.session?.user?.nick;
+   next();
+ });
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
