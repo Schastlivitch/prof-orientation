@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const sessions = require("express-session");
 const MongoStore = require("connect-mongo");
 const path = require("path");
-
 const app = express();
 
 const indexRouter = require("./routes/index");
@@ -12,6 +11,9 @@ const signUpRouter = require('./routes/signup')
 const logoutRouter = require('./routes/logOut')
 const contentRouter = require('./routes/content')
 const lkRouter = require('./routes/lk')
+const voteRouter = require('./routes/vote')
+const favRouter = require('./routes/favourite')
+
 
 app.set("view engine", "hbs");
 app.set("cookieName", "sid");
@@ -53,7 +55,10 @@ app.use('/auth', authRouter)
 app.use('/signup', signUpRouter)
 app.use('/logout', logoutRouter)
 app.use('/lk', lkRouter)
+app.use('/vote', voteRouter)
+app.use('/fav', favRouter)
 app.use('/', contentRouter)
+
 
 
 // Запуск сервака с монго
