@@ -21,8 +21,13 @@
                      {{!--  ссылка на конкретный кейс--}}
                   </div> 
                     <div class="btn-groupPost">
-                      <button class="btn btn-sm btn-outline-secondary">Рейтинг: {{thePost.rating}} (проголосовать)</button>
-                      <button class="btn btn-sm btn-outline-secondary">В любимом у {{thePost.favourites}} (добавить)</button>
+
+                      <form action="http://localhost:3000/vote/{{thePost._id}}" method="GET" class="mb-2">
+                        <button class="btnPost btn-smPost btn-outline-secondaryPost">Рейтинг: {{thePost.rating}} (проголосовать)</button>
+                      </form>
+                      <form action="http://localhost:3000/fav/{{thePost._id}}" method="GET" class="mb-2">
+                        <button class="btnPost btn-smPost btn-outline-secondaryPost">В любимом у {{thePost.favourites}} (добавить)</button>
+                      </form>
                 </div>
               </div>
             </div>

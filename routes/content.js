@@ -5,18 +5,15 @@ const Profession = require("../database/professions");
 const Video = require("../database/videos");
 
 
+
+
 router.get("/prof", async (req, res) => {
+  console.log('test 123');
   const profCards = await Profession.find();
+  console.log(profCards, 'test Egor');
   res.render("prof", {profCards});
 });
 
-router.get(`/:id`, async (req, res) => {
-  const theProf = await Profession.findById(req.params.id)
-  const thePost = await Video.findOne({profession: theProf.name})
-  // const thePosts = await Video.findAll({{name: theProf.name}}) //когда будет больше, чем по одному видосу на профессию
-  res.render('theOnePost', {thePost})
-  // res.sendStatus(200)
-})
 
 
 router.get('/video', async (req, res) => {
@@ -56,6 +53,19 @@ router.get('/random', async(req, res) => {
   }
     //рандомный кейс
 
-})
+// router.get(`/:id`, async (req, res) => {
+//   // console.log('ya tut', req.params.id.length);
+//   // if (req.params.id < 10) {
+
+//     const theProf = await Profession.findById(req.params.id)
+//     const thePost = await Video.findOne({profession: theProf.name})
+//     // const thePosts = await Video.findAll({{name: theProf.name}}) //когда будет больше, чем по одному видосу на профессию
+//     res.render('theOnePost', {thePost})
+//     // res.sendStatus(200)
+//   // }
+// })
+// router.get('/video/case:id', (req, res) => {
+//   res.render('theOneCase')
+// })
 
 module.exports = router;
