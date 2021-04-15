@@ -1,8 +1,8 @@
-const openVideo = document.querySelectorAll('.col profcard')
+// const openVideo = document.querySelectorAll('.col profcard')
 
-openVideo.addEventListener('submit', (e) => {
-  e.preventDefault()
-  console.log('hi')
+// openVideo.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   console.log('hi')
 
 
-})
+// })

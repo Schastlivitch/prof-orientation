@@ -52,8 +52,8 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/signup', signUpRouter)
 app.use('/logout', logoutRouter)
-app.use('/', contentRouter)
 app.use('/lk', lkRouter)
+app.use('/', contentRouter)
 
 
 // Запуск сервака с монго
