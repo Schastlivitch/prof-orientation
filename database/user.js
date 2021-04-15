@@ -9,8 +9,13 @@ const userSchema = new Schema({
            uique: true},
   password: { type: String,
               required: true},
+  type: String,
   intrests: Array,
-  favoriteVideos: Array
+  favoriteVideos: Array,
+  status: {
+    type: String,
+    default: 'user'
+  }
 })
 const User = model('User', userSchema)
 module.exports = User

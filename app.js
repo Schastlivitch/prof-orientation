@@ -10,6 +10,7 @@ const indexRouter = require("./routes/index");
 const authRouter = require('./routes/auth')
 const signUpRouter = require('./routes/signup')
 const logoutRouter = require('./routes/logOut')
+const contentRouter = require('./routes/content')
 
 app.set("view engine", "hbs");
 app.set("cookieName", "sid");
@@ -50,7 +51,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/signup', signUpRouter)
 app.use('/logout', logoutRouter)
-
+app.use('/', contentRouter)
 
 
 // Запуск сервака с монго
