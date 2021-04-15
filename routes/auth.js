@@ -11,11 +11,11 @@ router.get("/", (req, res) => {
 
 // Вход - отправка данных на сервер
 router.post("/", async (req, res) => {
-  const { name, email, password } = req.body;
-  if (name && email && password) {
+  const { login, email, password } = req.body;
+  if (login && email && password) {
     const password = await bcrypt.hash(plainPass, saltRounds);
     const newUser = await User.create({
-      name,
+      login,
       email,
       password,
     });
