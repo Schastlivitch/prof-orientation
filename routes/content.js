@@ -24,8 +24,38 @@ router.get('/video', async (req, res) => {
   res.render('video', {postCards})
 })
 
-router.get('/video/case:id', (req, res) => {
-  res.render('theOneCase')
+router.get('/video/cases', async (req, res) => {
+  let postCards = await Video.find()
+  let caseCards = []
+  for (let i = 0; i < postCards.length; i ++) {
+    caseCards.push(postCards[i].case)
+  }
+  res.render('allTheCases', {caseCards})
+})
+
+router.get('/video/:caseTitle', async (req, res) => {
+  let postCards = await Video.find()
+  let caseCards = []
+  for (let i = 0; i < postCards.length; i ++) {
+    caseCards.push(postCards[i].case)
+  } 
+  let theCase = {}
+  for (let i = 0; i < caseCards.length; i++) {
+    if (caseCards[i].caseTitle === req.params.caseTitle) {
+      theCase = caseCards[i]
+    }
+  }
+  res.render('theOneCase', {theCase})
+})
+
+router.get('/random', async(req, res) => {
+  let postCards = await Video.find()
+  let caseCards = []
+  for (let i = 0; i < postCards.length; i ++) {
+    caseCards.push(postCards[i].case)
+  }
+    //рандомный кейс
+
 })
 
 module.exports = router;
