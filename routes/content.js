@@ -14,7 +14,6 @@ router.get(`/:id`, async (req, res) => {
   const theProf = await Profession.findById(req.params.id)
   const thePost = await Video.findOne({profession: theProf.name})
   // const thePosts = await Video.findAll({{name: theProf.name}}) //когда будет больше, чем по одному видосу на профессию
-  console.log(thePost);
   res.render('theOnePost', {thePost})
   // res.sendStatus(200)
 })
