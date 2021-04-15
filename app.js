@@ -9,7 +9,7 @@ const app = express();
 const indexRouter = require("./routes/index");
 const authRouter = require('./routes/auth')
 const signUpRouter = require('./routes/signup')
-const logoutRouter = require('./routes/logout')
+const logoutRouter = require('./routes/logOut')
 
 app.set("view engine", "hbs");
 app.set("cookieName", "sid");

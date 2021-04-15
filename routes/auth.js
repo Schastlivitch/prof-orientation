@@ -11,18 +11,21 @@ router.get("/", (req, res) => {
 
 // Вход - отправка данных на сервер
 router.post("/", async (req, res) => {
-  const { login, email, password } = req.body;
-  if (login && email && password) {
-    const password = await bcrypt.hash(plainPass, saltRounds);
-    const newUser = await User.create({
-      login,
-      email,
-      password,
-    });
-    req.session.user = {
-      id: newUser._id,
-    };
-    return res.redirect("/");
+  const { login, password } = req.body;
+  if (login && password) {
+    const currentUser = await User.findOne({name: login});
+    if (currentUser) {
+      const validation = await bcrypt.compare(password, currentUser.password);
+      if (validation) {
+        req.session.user = {
+          id: currentUser._id,
+          nick: currentUser.name
+        };
+       return res.redirect("/main");
+      }
+      return res.redirect("/auth");
+    }
+    return res.redirect("/signup");
   }
   return res.redirect("/auth");
 });
