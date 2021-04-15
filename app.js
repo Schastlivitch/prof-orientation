@@ -7,8 +7,9 @@ const path = require("path");
 const app = express();
 
 const indexRouter = require("./routes/index");
-const authRouter = require('./routes/authentification')
-const signUpRouter = require('./routes/signup')
+const authRouter = require("./routes/auth");
+const signUpRouter = require("./routes/signup");
+const logOutRouter = require("./routes/logOut");
 
 app.set("view engine", "hbs");
 app.set("cookieName", "sid");
@@ -32,6 +33,11 @@ app.use(
   })
 );
 
+app.use(async (req, res, next) => {
+  res.locals.nick = req.session?.user?.nick;
+  next();
+});
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -40,10 +46,10 @@ app.use(express.json());
 //
 //
 //
-app.use('/', indexRouter)
-app.use('/auth', authRouter)
-app.use('/signup', signUpRouter)
-
+app.use("/", indexRouter);
+app.use("/auth", authRouter);
+app.use("/signup", signUpRouter);
+app.use("/logOut", logOutRouter);
 
 // Запуск сервака с монго
 app.listen(3000, () => {
