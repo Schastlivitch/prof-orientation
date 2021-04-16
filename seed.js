@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 const dbPath = process.env.DB_HOST + process.env.DB_PORT + process.env.DB_NAME
+const uri = process.env.DB_ATLAS_PATH
+
 
 const options = {
   useNewUrlParser: true,
@@ -13,7 +15,7 @@ const options = {
 
 
 function dbConnect() {
-  mongoose.connect(dbPath, options, (err) => {
+  mongoose.connect(uri, options, (err) => {
     if (err) return console.log(err)
     // console.log('Success connected to mongo')
   })

@@ -17,7 +17,6 @@ router.get("/main", checkAuth, async (req, res) => {
   const currentUser = await User.findOne({name: req.session?.user?.nick})
   const currentUserInterests = currentUser.intrests
   const professions = await Profession.find()
-  console.log(currentUserInterests);
   const interestProf = [];
   currentUserInterests.map((intrest) => {
     professions.map((prof) => {

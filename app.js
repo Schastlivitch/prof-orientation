@@ -14,9 +14,11 @@ const contentRouter = require('./routes/content')
 const lkRouter = require('./routes/lk')
 const voteRouter = require('./routes/vote')
 const favRouter = require('./routes/favourite')
+const MongoClient = require('mongodb').MongoClient;
 const port = process.env.PORT
 const dbPath = process.env.DB_HOST + process.env.DB_PORT + process.env.DB_NAME
 const secretKey = process.env.KEY
+const uri = process.env.DB_ATLAS_PATH
 
 app.set("view engine", "hbs");
 app.set("cookieName", "sid");
@@ -68,7 +70,7 @@ app.listen(port, () => {
 });
 // НАПИШИ АДРЕС-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С
 mongoose.connect(
-  dbPath,
+  uri,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -78,3 +80,10 @@ mongoose.connect(
     console.log("Hello there, motherbase");
   }
 );
+
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });

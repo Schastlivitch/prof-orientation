@@ -7,16 +7,17 @@ const Profession = require('../database/professions')
 
 router.get('/', async (req, res) => {
   const currentUser = await User.findOne({name: req.session?.user?.nick})
-  const fav = [];
+  let fav = [];
     // favId: []
-  currentUser.favoriteVideos.map( async (post) => {
-    const findPost = await Video.findOne({_id: post})
-    const prof = await Profession.findOne({name: findPost.profession})
-    fav.push({favName: findPost.title, favId: prof._id})
-    // favId.push(prof._id)
-  })
+    for(let post of currentUser.favoriteVideos) {
+      const findPost = await Video.findOne({_id: post})
+      const prof = await Profession.findOne({name: findPost.profession})
+      const vloj = {favName: findPost.title, favId: prof._id}
+      console.log(vloj);
+      fav.push(vloj)
+    }
+  console.log(fav);
   let isDonater;
-  console.log(currentUser.status);
   if (currentUser.status === 'donater') {
     isDonater = false
   } else if (currentUser.status === 'user') {
@@ -26,7 +27,6 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  console.log(req.body);
   const currentUser = await User.findOneAndUpdate({name: req.session?.user?.nick}, {intrests: req.body.intrests})
   res.sendStatus(200)
 })

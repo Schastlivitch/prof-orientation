@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const { login, email, password } = req.body;
-  console.log(req.body);
   if (login && email && password) {
     const secretPass = await bcrypt.hash(password, 10);
     try {
