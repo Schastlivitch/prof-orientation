@@ -3,9 +3,10 @@ const router = Router();
 const User = require("../database/user");
 const Video = require('../database/videos');
 const Profession = require('../database/professions')
+const checkAuth = require('../mid/checkauth')
 
 
-router.get('/', async (req, res) => {
+router.get('/', checkAuth, async (req, res) => {
   const currentUser = await User.findOne({name: req.session?.user?.nick})
   let fav = [];
     // favId: []

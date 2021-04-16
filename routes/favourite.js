@@ -4,8 +4,9 @@ const router = Router();
 const Profession = require("../database/professions");
 const Video = require("../database/videos");
 const User = require('../database/user');
+const checkAuth = require('../mid/checkauth')
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', checkAuth, async (req, res) => {
   const currentPost = await Video.findOne({_id: req.params.id});
   const currentUser = await User.findOne({name: req.session?.user?.nick})
   if (!currentUser.favoriteVideos.includes(currentPost._id)) {
