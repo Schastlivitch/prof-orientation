@@ -61,7 +61,7 @@ form.addEventListener('submit', (e) => {
         values.push(box.value);
       }
     })
-    const response = await fetch('http://localhost:3000/lk', {
+    const response = await fetch('/lk', {
       method: "POST",
       headers: {
         "Content-type": "application/json"
