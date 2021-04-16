@@ -9,9 +9,7 @@ const donaterCheck = require('../mid/donaterCheck')
 
 
 router.get("/prof", async (req, res) => {
-  console.log('test 123');
   const profCards = await Profession.find();
-  console.log(profCards, 'test Egor');
   res.render("prof", {profCards});
 });
 
@@ -32,7 +30,6 @@ router.get('/video/cases', async (req, res) => {
 })
 
 router.get('/video/:caseTitle', donaterCheck, async (req, res) => {
-  console.log(req.params);
   let postCards = await Video.find()
   let caseCards = []
   for (let i = 0; i < postCards.length; i ++) {
