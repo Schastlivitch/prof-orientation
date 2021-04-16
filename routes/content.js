@@ -60,7 +60,7 @@ router.get('/random', async(req, res) => {
 })
     //рандомный кейс
 
-router.get(`/:id`, async (req, res) => {
+router.get(`/post/:id`, async (req, res) => {
   // console.log('ya tut', req.params.id.length);
   // if (req.params.id < 10) {
 
