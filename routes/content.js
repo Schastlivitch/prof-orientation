@@ -4,7 +4,7 @@ const router = Router();
 const Profession = require("../database/professions");
 const Video = require("../database/videos");
 const donaterCheck = require('../mid/donaterCheck')
-
+const checkAuth = require('../mid/checkauth')
 
 
 
@@ -15,7 +15,7 @@ router.get("/prof", async (req, res) => {
 
 
 
-router.get('/video', async (req, res) => {
+router.get('/video', donaterCheck, async (req, res) => {
   const postCards = await Video.find()
   res.render('video', {postCards})
 })
@@ -29,7 +29,7 @@ router.get('/video/cases', async (req, res) => {
   res.render('allTheCases', {caseCards})
 })
 
-router.get('/video/:caseTitle', donaterCheck, async (req, res) => {
+router.get('/video/:caseTitle', checkAuth, donaterCheck, async (req, res) => {
   let postCards = await Video.find()
   let caseCards = []
   for (let i = 0; i < postCards.length; i ++) {
@@ -67,7 +67,7 @@ router.get(`/post/:id`, async (req, res) => {
     // res.sendStatus(200)
   // }
 })
-router.get('/video/case:id', (req, res) => {
+router.get('/video/case:id', checkAuth, donaterCheck, (req, res) => {
   res.render('theOneCase')
 })
 

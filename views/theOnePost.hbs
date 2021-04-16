@@ -6,11 +6,11 @@
     <p class="lead"> <h3>{{thePost.title}}</h3> </p>
     <p class="lead">{{thePost.script}}</p>
     <a class="nav-linkPost text-decoration-none text-success" href="/video/{{thePost.case.caseTitle}}" tabindex="-1" aria-disabled="true"> <h4>Решить реальный кейс</h4></a>
-    <form action="/vote/{{thePost._id}}" method="GET" class="mb-2 mt-5">
-      <button class="btnPost btn-smPost btn-outline-secondaryPost">Рейтинг: {{thePost.rating}} (проголосовать)</button>
+    <form action="/vote/{{thePost._id}}" method="GET" class="btn-group mt-2">
+      <button class="btn btn-sm btn-outline-secondary">Рейтинг: {{thePost.rating}} (проголосовать)</button>
     </form>
-    <form action="/fav/{{thePost._id}}" method="GET" class="mb-4">
-      <button class="btnPost btn-smPost btn-outline-secondaryPost">В любимом у {{thePost.favourites}} (добавить)</button>
+    <form action="/fav/{{thePost._id}}" method="GET" class="btn-group mt-2">
+      <button class="btn btn-sm btn-outline-secondary">В любимом у {{thePost.favourites}} (добавить)</button>
     </form>
   </div>
 </main>
