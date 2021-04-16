@@ -16,13 +16,11 @@ const voteRouter = require('./routes/vote')
 const favRouter = require('./routes/favourite')
 const port = process.env.PORT
 const dbPath = process.env.DB_HOST + process.env.DB_PORT + process.env.DB_NAME
-
+const secretKey = process.env.KEY
 
 app.set("view engine", "hbs");
 app.set("cookieName", "sid");
 
-const secretKey =
-  "2ef080cd6a761ae6d3e97ecdcf62614e76bd6b0f2391169e42cff52e0db6c25b49788c5a0ec2e18469b38e41806ce9f2646a267b203ed95a880223f6b82b4660";
 
 app.use(
   sessions({
