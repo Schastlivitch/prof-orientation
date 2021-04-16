@@ -4,6 +4,7 @@ const sessions = require("express-session");
 const MongoStore = require("connect-mongo");
 const path = require("path");
 const app = express();
+require('dotenv').config()
 
 const indexRouter = require("./routes/index");
 const authRouter = require('./routes/auth')
@@ -13,6 +14,8 @@ const contentRouter = require('./routes/content')
 const lkRouter = require('./routes/lk')
 const voteRouter = require('./routes/vote')
 const favRouter = require('./routes/favourite')
+const port = process.env.PORT
+const dbPath = process.env.DB_HOST + process.env.DB_PORT + process.env.DB_NAME
 
 
 app.set("view engine", "hbs");
@@ -62,12 +65,12 @@ app.use('/', contentRouter)
 
 
 // Запуск сервака с монго
-app.listen(3000, () => {
-  console.log("Его борьба");
+app.listen(port, () => {
+  console.log("Боже, царя храни");
 });
 // НАПИШИ АДРЕС-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С-С
 mongoose.connect(
-  "mongodb://localhost:27017/profOrientation",
+  dbPath,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

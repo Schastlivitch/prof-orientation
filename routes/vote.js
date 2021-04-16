@@ -14,7 +14,7 @@ router.get('/:id', async (req, res) => {
   }
 
   const prof = await Profession.findOne({name: currentPost.profession})
-  res.redirect(`/${prof._id}`)
+  res.redirect(`/post/${prof._id}`)
 })
 
 module.exports = router;

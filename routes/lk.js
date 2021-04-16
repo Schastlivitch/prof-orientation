@@ -15,7 +15,14 @@ router.get('/', async (req, res) => {
     fav.push({favName: findPost.title, favId: prof._id})
     // favId.push(prof._id)
   })
-  res.render('lk', {currentUser, fav})
+  let isDonater;
+  console.log(currentUser.status);
+  if (currentUser.status === 'donater') {
+    isDonater = false
+  } else if (currentUser.status === 'user') {
+    isDonater = true
+  }
+  res.render('lk', {currentUser, fav, isDonater})
 })
 
 router.post('/', async (req, res) => {

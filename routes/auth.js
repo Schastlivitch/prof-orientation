@@ -6,8 +6,11 @@ const saltRounds = 10;
 
 // Вход - получение формы
 router.get("/", (req, res) => {
+  let proverka = req.query.wrongpass
   res.render("login");
 });
+
+
 
 // Вход - отправка данных на сервер
 router.post("/", async (req, res) => {
@@ -23,11 +26,11 @@ router.post("/", async (req, res) => {
         };
         return res.redirect("/main");
       }
-      return res.redirect("/auth");
+      return res.render("wrongpass");
     }
-    return res.redirect("/signup");
+    return res.render("wronglogin");
   }
-  return res.redirect("/auth");
+  return res.render("emptyinput");
 });
 
 module.exports = router;

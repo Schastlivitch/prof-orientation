@@ -26,9 +26,15 @@ router.get("/main", checkAuth, async (req, res) => {
       }
     })
   })
-  console.log(interestProf);
 
-  res.render("main", {interestProf});
+  let hasIntrests
+  if (interestProf.length === 0) {
+    hasIntrests = true
+  } else if (interestProf.length !== 0) {
+    hasIntrests = false
+  }
+
+  res.render("main", {interestProf, hasIntrests});
 });
 
 router.get("/prof", async (req, res) => {

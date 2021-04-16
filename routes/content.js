@@ -44,7 +44,7 @@ router.get('/video/:caseTitle', donaterCheck, async (req, res) => {
   res.render('theOneCase', {theCase})
 })
 
-router.get('/random', async(req, res) => {
+router.get('/random', donaterCheck, async(req, res) => {
   let postCards = await Video.find()
   const random = Math.floor(Math.random() * (postCards.length))
   let caseCards = []

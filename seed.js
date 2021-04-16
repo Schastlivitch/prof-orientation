@@ -1,4 +1,7 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
+const dbPath = process.env.DB_HOST + process.env.DB_PORT + process.env.DB_NAME
+
 const options = {
   useNewUrlParser: true,
   useFindAndModify: false,
@@ -8,14 +11,9 @@ const options = {
   bufferMaxEntries: 0
 }
 
-const DB_HOST = 'localhost'
-const DB_NAME = 'profOrientation'
-const DB_PORT = 27017
-
-const dbConnectionURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`
 
 function dbConnect() {
-  mongoose.connect(dbConnectionURL, options, (err) => {
+  mongoose.connect(dbPath, options, (err) => {
     if (err) return console.log(err)
     // console.log('Success connected to mongo')
   })
@@ -56,7 +54,7 @@ function profFabric() {
       image: 'https://detector.media/doc/images/news/archive/2016/167900/ArticleImage_167900.png?t=1559816287'
     },
     {
-      name: 'Человек, который пишет тебе курсач',
+      name: 'Курсач райтер',
       sphere: 'Литература',
       image: 'https://image.freepik.com/free-photo/student-writing-on-notebook-while-using-laptop_7190-3172.jpg'
     },
