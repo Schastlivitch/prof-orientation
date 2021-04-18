@@ -14,10 +14,8 @@ router.get('/', checkAuth, async (req, res) => {
       const findPost = await Video.findOne({_id: post})
       const prof = await Profession.findOne({name: findPost.profession})
       const vloj = {favName: findPost.title, favId: prof._id}
-      console.log(vloj);
       fav.push(vloj)
     }
-  console.log(fav);
   let isDonater;
   if (currentUser.status === 'donater') {
     isDonater = false

@@ -1,12 +1,12 @@
-const form = document.querySelector('form');
-const editButton = document.querySelector('button');
+const form = document.querySelector('#form2');
+const editButton = document.querySelector('#button2');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   editButton.remove()
-  const header = document.createElement('h2');
-  header.className = 'mt-3';
-  header.innerText = 'Редактирование'
+  const header = document.createElement('p');
+  header.className = 'mark text-center';
+  header.innerText = 'Обновите интересы'
   const litDiv = document.createElement('div');
   const litBox = document.createElement('input');
   litBox.type = 'checkbox'
@@ -47,8 +47,8 @@ form.addEventListener('submit', (e) => {
   itDiv.append(itLabel)
 
   const button = document.createElement('button');
-  button.className = 'w-100 btn btn-lg btn-success mt-3'
-  button.innerText = 'Внести изменения'
+  button.className = 'btn btn-sm btn-outline-secondary mt-3'
+  button.innerText = 'Изменить'
   form.append(header, litDiv, medDiv, itDiv, button)
 
   button.addEventListener('click', async (e) => {

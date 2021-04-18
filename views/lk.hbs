@@ -1,34 +1,46 @@
-    <main class="row">
-      <div class="container">
-        <h1>Привет {{nick}}!</h1>
-        <h2 class="mt-5">Общая информация о профиле</h2>
-        <p class="lead">
+<div class="container">
+  <h1 class="text-center mb-5">Привет {{nick}}!</h1>
+  <div class="row">
+    <div class="col-sm">
+      <div class="card-body bg-light">
+        <p class="mark text-center">Общая информация</p>
+        <div class="justify-content-between align-items-center">
           <p><a>Логин</a>: <a>{{nick}}</a></p>
           <p><a>Почта</a>: <a>{{currentUser.email}}</a></p>
           <p><a>Статус</a>: <a>{{currentUser.status}}</a></p>
-        </p>
-        <h2 class="mt-3">Интересы</h2>
-        <p class="lead">
+            {{#if isDonater}}
+            <form action="/lk/upgrade" method="GET">
+              <button class="btn btn-sm btn-outline-secondary">Расширить возможности</button>
+            </form>
+            {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card-body bg-light">
+        <p class="mark text-center">Интересы</p>
+        <div class="justify-content-between align-items-center">
           {{#each currentUser.intrests}}
           <p>{{this}}</p>
           {{/each}}
-        </p>
-        <form>
-          <button class="w-100 btn btn-lg btn-success">Изменить интересы</button>
-        </form>
-        {{#if isDonater}}
-        <form action="/lk/upgrade" method="GET">
-          <button class="w-100 btn btn-lg btn-success fixed-bottom">Расширить возможности</button>
-        </form>
-        {{/if}}
-        <h2 class="mt-3">Избранное</h2>
-        <p class="lead">
-          {{#each fav}}
-          <h5><a href="/post/{{this.favId}}" class="text-decoration-none text-success">{{this.favName}}</a> </h5>
-          {{/each}}
-        </p>
+          <form id="form2">
+            <button class="btn btn-sm btn-outline-secondary" id="button2">Изменить интересы</button>
+          </form>
+        </div>
       </div>
-    </main>
+    </div>
+    <div class="col-sm">
+      <div class="card-body bg-light">
+        <p class="mark text-center">Избранное</p>
+        <div class="justify-content-between align-items-center">
+          {{#each fav}}
+          <p><a href="/post/{{this.favId}}" class="text-decoration-none text-dark">{{this.favName}}</a></p> 
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <script src="js/editprofile.js"></script>
+<script src="js/editprofile.js"></script>
 
